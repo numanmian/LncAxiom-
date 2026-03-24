@@ -1,0 +1,10 @@
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  - fastqc=0.12.1
+  - fastp=0.23.4
+  - hisat2=2.2.1
+  - samtools=1.20
+  - multiqc=1.25

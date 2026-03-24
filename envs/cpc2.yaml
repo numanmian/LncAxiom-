@@ -1,0 +1,8 @@
+name: cpc2
+channels:
+  - jitendralab
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - cpc2_standalone

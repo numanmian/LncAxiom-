@@ -1,0 +1,10 @@
+dependencies:
+  - perl
+  - perl-bioperl
+  - perl-bioperl-run
+  - perl-parallel-forkmanager
+  - perl-db-file
+  - perl-dbd-sqlite
+  - r-base
+  - r-randomforest
+  - r-rocr

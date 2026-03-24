@@ -1,0 +1,9 @@
+name: feelnc_r
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-base
+  - r-randomforest
+  - r-rocr

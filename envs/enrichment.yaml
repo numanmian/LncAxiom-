@@ -1,0 +1,13 @@
+name: enrichment
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - r-base=4.2
+  - r-tidyverse
+  - r-hmisc
+  - r-enrichr
+  - bioconductor-annotationdbi
+  - bioconductor-org.at.tair.db
+

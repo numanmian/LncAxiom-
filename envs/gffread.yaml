@@ -1,0 +1,6 @@
+name: gffread
+channels:
+  - bioconda
+  - defaults
+dependencies:
+  - gffread

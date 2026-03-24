@@ -1,0 +1,125 @@
+# ===========================
+# Core paths
+# ===========================
+samples: "config/samples.tsv"
+
+genome_fasta: "resources/reference_genome/TAIR10.fa"
+genome_gtf:   "resources/reference_genome/TAIR10.gtf"
+
+# merged transcriptome from StringTie merge
+merged_gtf: "results/merged.gtf"
+
+# prepDE outputs
+gene_counts:       "results/gene_counts.csv"
+transcript_counts: "results/transcript_counts.csv"
+
+# gffcompare-based lncRNA candidates
+candidate_gtf: "results/lncrna_candidates.gtf"
+
+# ===========================
+# Module switches
+# ===========================
+run_download:           true          # set to true to download from SRA
+run_preprocessing:      true
+run_assembly:           true
+run_quantification:     true
+run_lncrna_prediction:  true
+
+# FEELnc module switches
+run_feelnc_filter:       true
+run_feelnc_codpot:       true
+run_feelnc_classifier:   true
+run_feelnc_intersection: false
+
+# ===========================
+# FEELnc training data
+# ===========================
+train_lncrna_fasta: "resources/model_training_datasets/training_dataset.fa"
+train_mrna_fasta:   "resources/model_training_datasets/Ath_mRNA.fa"
+
+# ===========================
+# FEELnc outputs
+# ===========================
+feelnc_filter_out:       "results/feelnc/filter.gtf"
+feelnc_lncrna_out:       "results/feelnc/filter.gtf.lncRNA.gtf"
+feelnc_codpot_out:       "results/feelnc/codpot.txt"      # dummy, not used
+feelnc_classifier_out:   "results/feelnc/classifier.txt"
+feelnc_intersection_out: "results/feelnc/high_confidence_ids.txt"
+feelnc_final_gtf:        "results/feelnc/high_confidence_lncrna.gtf"
+
+# ===========================
+# Other parameters
+# ===========================
+threads: 8
+stringtie_args: ""
+
+# ===========================
+# HISAT2 index settings
+# ===========================
+hisat2_index: "results/indexes/TAIR10"
+hisat2_index_prefix: "results/indexes/TAIR10"
+
+# ===========================
+# DESeq2 differential expression
+# ===========================
+counts:
+  gene: "results/gene_counts.csv"
+  transcript: "results/transcript_counts.csv"
+
+metadata: "config/samples.tsv"
+
+design: "~ condition"
+contrast:
+  factor: "condition"
+  case: "Treatment"          # change to your treatment level
+  control: "Control"          # change to your control level
+
+volcano:
+  padj_cutoff: 0.05
+  lfc_cutoff: 1.0
+
+# ===========================
+# Input method
+# ===========================
+# Input method: "sra" (download from SRA) or "local" (use existing FASTQ files)
+input_method: "sra"
+# Directory containing local FASTQ files (only used when input_method = "local")
+# The pipeline expects files named as {sample}.fastq.gz inside this directory.
+local_fastq_dir: "test_data"
+
+# ===========================
+# psRobot module for eTM prediction
+# ===========================
+run_psrobot_etm: false
+psrobot_mirna_fasta: "resources/microrna_sequences/miRNAs.fa"
+psrobot_output_dir: "results/psrobot"
+psrobot_score_thresh: 2.5
+psrobot_max_bulge_size: 3
+psrobot_max_mismatches_gu: 3
+psrobot_bin: "psRobot_tar"
+
+# ===========================
+# BLAST novelty assessment
+# ===========================
+# Note: Users must download and index the following databases in resources/homology_databases/
+# For testing, set run_blast_novelty to false until databases are available.
+run_blast_novelty: false
+blast_databases:
+  cantatadb: "resources/homology_databases/CANTATAdb/CANTATAdb"
+  noncode:   "resources/homology_databases/NONCODE/NONCODE"
+  plncdb:    "resources/homology_databases/PLncDB/PLncDB"
+  greenc:    "resources/homology_databases/GreeNc/GreeNc"
+blast_evalue: 1e-5
+blast_outfmt: "6 qseqid sseqid pident length mismatch gapopen qstart qend sstart send evalue bitscore"
+blast_output_dir: "results/blast_novelty"
+blast_threads: 8
+
+# ===========================
+# Functional enrichment module
+# ===========================
+run_enrichment: true
+enrichment_cor_threshold: 0.8
+enrichment_p_threshold: 0.01
+enrichment_databases:
+  - "GO_Biological_Process_2023"
+  - "Reactome_Pathways_2024"

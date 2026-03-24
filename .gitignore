@@ -1,0 +1,64 @@
+# Data and results
+data/
+results/
+logs/
+__pycache__/
+*.pyc
+*.log
+*.tmp
+*.gz
+*.zip
+*.tar
+*.tar.gz
+*.sra
+*.bam
+*.sam
+*.gtf
+*.fasta
+*.fa
+*.fai
+*.index
+*.ndb
+*.nhr
+*.nin
+*.njs
+*.nog
+*.nos
+*.not
+*.nsq
+*.ntf
+*.nto
+*.png
+*.html
+*.json
+*.csv
+*.tsv
+*.RData
+*.Rhistory
+*.Rout
+
+# Conda environments (if created inside repo)
+envs/*/
+!envs/*.yaml
+
+# Tools installed manually
+tools/
+
+# Backup files
+*~
+*.bak
+*.swp
+.DS_Store
+__MACOSX
+
+# Reference files (users should provide their own)
+resources/*.fa
+resources/*.gtf
+resources/*.fai
+resources/*.index
+resources/homology_databases/
+.snakemake/
+!config/samples.tsv
+!config/samples.tsv
+*.broken
+*.broken

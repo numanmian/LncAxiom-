@@ -1,0 +1,7 @@
+kname: feelnc
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - feelnc=0.2

@@ -1,0 +1,12 @@
+name: feelnc_filter_env
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - perl=5.26
+  - perl-bioperl
+  - perl-parallel-forkmanager
+  - perl-db-file
+  - bedtools
+  - samtools
