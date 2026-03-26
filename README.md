@@ -1,2 +1,3 @@
-# LncAxiom
- A Snakemake-based pipeline for lncRNA identification and downstream analysis
+# LncAxiom-
+
+A Reproducible and Modular Snakemake Pipeline for Genome-Wide lncRNA Prediction and Annotation
