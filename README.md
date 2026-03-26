@@ -53,6 +53,10 @@ The workflow is modular, so selected modules can be run without repeating all up
 ---
 
 ## Quick start
+
+```bash
+snakemake --use-conda --cores 4
+
 ## Troubleshooting
 
 ### 1. FEELnc classifier error: `Can't locate Bio/DB/SeqFeature/Store.pm in @INC`
@@ -74,7 +78,6 @@ The workflow is modular, so selected modules can be run without repeating all up
 ### 5. Local FASTQ files are not detected
 **Cause:** File names do not exactly match the sample names in `config/samples.tsv`, or `input_method` is not set correctly.  
 **Possible fix:** Confirm sample names, file extensions, and `config/config.yaml` settings.
-```bash
-snakemake --use-conda --cores 4
+
 
 
