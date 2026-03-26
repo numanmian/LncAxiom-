@@ -53,6 +53,28 @@ The workflow is modular, so selected modules can be run without repeating all up
 ---
 
 ## Quick start
+## Troubleshooting
 
+### 1. FEELnc classifier error: `Can't locate Bio/DB/SeqFeature/Store.pm in @INC`
+**Cause:** A required Perl/BioPerl module is missing.  
+**Possible fix:** Install the missing Perl module inside the active environment and rerun the affected step.
+
+### 2. CPC2 error: `No executable svm-scale on CPC2 path!`
+**Cause:** CPC2 or its `libsvm` dependency is not properly installed or compiled.  
+**Possible fix:** Reinstall CPC2 and ensure the required binaries are available in the environment.
+
+### 3. Conda environment creation fails
+**Cause:** Missing packages, dependency conflicts, or network issues.  
+**Possible fix:** Retry with Mamba, verify channel priority, and check internet connectivity.
+
+### 4. Empty final high-confidence lncRNA output
+**Cause:** No transcripts passed the intersection or filtering criteria.  
+**Possible fix:** Check the individual FEELnc and CPC2 outputs separately and review filtering thresholds.
+
+### 5. Local FASTQ files are not detected
+**Cause:** File names do not exactly match the sample names in `config/samples.tsv`, or `input_method` is not set correctly.  
+**Possible fix:** Confirm sample names, file extensions, and `config/config.yaml` settings.
 ```bash
 snakemake --use-conda --cores 4
+
+
