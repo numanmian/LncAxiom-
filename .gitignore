@@ -62,3 +62,10 @@ resources/homology_databases/
 !config/samples.tsv
 *.broken
 *.broken
+.DS_Store
+.snakemake/
+LncAxiom-/
+*.index
+*.fai
+!resources/microrna_sequences/
+!resources/microrna_sequences/miRNAs.fa
