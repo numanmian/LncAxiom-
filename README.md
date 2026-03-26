@@ -5,7 +5,11 @@
 **LncAxiom** is a modular, end-to-end Snakemake workflow for the identification, classification, and functional analysis of long non-coding RNAs (lncRNAs) from RNA-seq data. It integrates established tools such as FEELnc, CPC2, HISAT2, StringTie, DESeq2, and psRobot in a reproducible Conda-managed environment.
 
 ---
+## Workflow DAG
 
+![LncAxiom workflow DAG](DAG.png)
+
+*Overview of the LncAxiom Snakemake workflow as a directed acyclic graph (DAG).*
 ## Description
 
 LncAxiom automates the main lncRNA discovery workflow:

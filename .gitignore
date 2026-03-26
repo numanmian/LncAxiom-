@@ -69,3 +69,5 @@ LncAxiom-/
 *.fai
 !resources/microrna_sequences/
 !resources/microrna_sequences/miRNAs.fa
+
+!DAG.png
