@@ -1,4 +1,4 @@
-# LncAxiom: A Reproducible Snakemake Pipeline for Genome-Wide lncRNA Prediction and Annotation
+# LncAxiom: An Automated Computational Pipeline for Genome-Wide lncRNAs Identification, Annotation, and Functional Prioritization
 
 ![Snakefmt](https://img.shields.io/badge/snakefmt-formatted-blue) ![License](https://img.shields.io/badge/license-MIT-green) [![Snakemake](https://img.shields.io/badge/snakemake-%E2%89%A57.8-brightgreen)](https://snakemake.github.io)
 
